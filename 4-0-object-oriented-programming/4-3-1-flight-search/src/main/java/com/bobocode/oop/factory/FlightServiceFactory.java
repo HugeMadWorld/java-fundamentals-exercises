@@ -1,7 +1,6 @@
 package com.bobocode.oop.factory;
 
 import com.bobocode.oop.service.FlightService;
-import com.bobocode.util.ExerciseNotCompletedException;
 
 /**
  * {@link FlightServiceFactory} is used to create an instance of {@link FlightService}
@@ -10,12 +9,17 @@ import com.bobocode.util.ExerciseNotCompletedException;
  */
 public class FlightServiceFactory {
 
-    /**
-     * Create a new instance of {@link FlightService}
-     *
-     * @return FlightService
-     */
-    public FlightService creteFlightService() {
-        throw new ExerciseNotCompletedException();
+  FlightService service;
+
+  /**
+   * Create a new instance of {@link FlightService}
+   *
+   * @return FlightService
+   */
+  public FlightService creteFlightService() {
+    if (service == null) {
+      service = new FlightService();
     }
+    return service;
+  }
 }
